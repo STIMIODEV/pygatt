@@ -189,7 +189,7 @@ class BGAPIBackend(BLEBackend):
             raise NotConnectedError("Unable to reconnect with USB "
                                     "device after rebooting")
 
-    def start(self, reset=True):
+    def start(self, reset=False):
         """
         Connect to the USB adapter, reset its state and start a background
         receiver thread.

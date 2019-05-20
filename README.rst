@@ -38,25 +38,11 @@ Requirements
 Installation
 ------------
 
-Install ``pygatt`` with pip from PyPI:
+Install ``pygatt`` with pip from stimio repository:
 
 ::
 
-    $ pip install pygatt
-
-The BlueZ backend is not supported by default as it requires
-``pexpect``, which can only be installed in a UNIX-based environment. If
-you wish to use that backend, install the optional dependencies with:
-
-::
-
-    $ pip install "pygatt[GATTTOOL]"
-
-Install the latest development version of ``pygatt`` with pip:
-
-::
-
-    $ pip install git+https://github.com/peplin/pygatt
+    $ pip3 install git+https://github.com/STIMIODEV/pygatt
 
 Documentation
 ----------
