@@ -14,6 +14,13 @@ class BLEBackend(object):
     `pygatt.backends` module for available implementations.
     """
 
+    def __enter__(self):
+        self.start()
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.stop()
+
     def start(self):
         """Initialize and resource required to run the backend, e.g. background
         threads, USB device connections, etc.
