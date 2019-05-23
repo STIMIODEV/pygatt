@@ -80,6 +80,17 @@ to a device and get an instance of ``BLEDevice.``
     finally:
         adapter.stop()
 
+Note that it's also possible to use context manager as follow :
+
+.. code:: python
+
+    import pygatt
+
+        with pygatt.BGAPIBackend() as adapter:
+            with adapter.connect(address='01:23:45:67:89:ab', address_type=pygatt.BLEAddressType.random) as device:
+                print(device.discover_characteristics())
+
+
 Note that not all backends support connecting to more than 1 device at
 at time, so calling ``BLEBackend.connect`` again may terminate existing
 connections.

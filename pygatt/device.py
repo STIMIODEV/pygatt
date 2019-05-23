@@ -35,6 +35,12 @@ class BLEDevice(object):
         self._subscribed_uuids = {}
         self._lock = threading.Lock()
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        self.disconnect()
+
     def bond(self, permanent=False):
         """
         Create a new bond or use an existing bond with the device and make the
